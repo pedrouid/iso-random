@@ -37,6 +37,7 @@
     "publish:beta": "yarn publish --tag=beta"
   },
   "dependencies": {
+    "@pedrouid/environment": "^1.0.1",
     "enc-utils": "^3.0.0",
     "randombytes": "^2.1.0"
   },

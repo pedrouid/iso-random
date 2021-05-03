@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import randomBytes from 'randombytes';
+import * as env from '@pedrouid/environment';
 import { bufferToArray } from 'enc-utils';
 
 export function nodeRandomBytes(length: number): Uint8Array {
@@ -17,35 +18,12 @@ export function assert(condition: boolean, message: string): void {
   }
 }
 
-export function getBrowerCrypto(): Crypto {
-  // @ts-ignore
-  return global?.crypto || global?.msCrypto || {};
-}
-
-export function getSubtleCrypto(): SubtleCrypto {
-  const browserCrypto = getBrowerCrypto();
-  // @ts-ignore
-  return browserCrypto.subtle || browserCrypto.webkitSubtle;
-}
-
 export function browserRandomBytes(length: number): Uint8Array {
-  const browserCrypto = getBrowerCrypto();
+  const browserCrypto = env.getBrowerCrypto();
   if (typeof browserCrypto.getRandomValues !== 'undefined') {
     return browserCrypto.getRandomValues(new Uint8Array(length));
   }
   return fallbackRandomBytes(length);
-}
-
-export function isBrowser(): boolean {
-  return !!getBrowerCrypto() && !!getSubtleCrypto();
-}
-
-export function isNode(): boolean {
-  return (
-    typeof process !== 'undefined' &&
-    typeof process.versions !== 'undefined' &&
-    typeof process.versions.node !== 'undefined'
-  );
 }
 
 export function isValidKeyLength(length: number) {

@@ -12,13 +12,6 @@ declare global {
 window.msCrypto = new Crypto();
 
 describe('Browser', () => {
-  describe('isBrowser', () => {
-    it('should return true', () => {
-      const result = helpers.isBrowser();
-      expect(result).toBeTruthy();
-    });
-  });
-
   describe('RandomBytes', () => {
     let length: number;
     let key: Uint8Array;

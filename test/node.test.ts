@@ -12,13 +12,6 @@ declare global {
 window.msCrypto = new Crypto();
 
 describe('NodeJS', () => {
-  describe('isNode', () => {
-    it('should return true', () => {
-      const result = helpers.isNode();
-      expect(result).toBeTruthy();
-    });
-  });
-
   describe('RandomBytes', () => {
     let length: number;
     let key: Uint8Array;

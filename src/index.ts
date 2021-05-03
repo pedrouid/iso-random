@@ -1,7 +1,7 @@
+import * as env from '@pedrouid/environment';
+
 import {
   isValidKeyLength,
-  isBrowser,
-  isNode,
   browserRandomBytes,
   nodeRandomBytes,
   fallbackRandomBytes,
@@ -12,9 +12,9 @@ export function randomBytes(length: number): Uint8Array {
     throw new Error(`randomBytes - invalid key length: ${length}`);
   }
   let result;
-  if (isBrowser()) {
+  if (env.isBrowser()) {
     result = browserRandomBytes(length);
-  } else if (isNode()) {
+  } else if (env.isNode()) {
     result = nodeRandomBytes(length);
   } else {
     result = fallbackRandomBytes(length);

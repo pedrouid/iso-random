@@ -1,6 +1,6 @@
 import { Crypto } from '@peculiar/webcrypto';
 
-import * as helpers from '../src/helpers';
+import * as nodeCrypto from '../src/node';
 
 declare global {
   interface Window {
@@ -18,7 +18,7 @@ describe('NodeJS', () => {
 
     beforeEach(async () => {
       length = 32;
-      key = helpers.nodeRandomBytes(length);
+      key = nodeCrypto.randomBytes(length);
     });
 
     it('should generate random bytes sucessfully', async () => {

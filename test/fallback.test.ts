@@ -1,6 +1,6 @@
 import { Crypto } from '@peculiar/webcrypto';
 
-import * as helpers from '../src/helpers';
+import * as fallbackCrypto from '../src/fallback';
 
 declare global {
   interface Window {
@@ -18,7 +18,7 @@ describe('Fallback', () => {
 
     beforeEach(async () => {
       length = 32;
-      key = helpers.fallbackRandomBytes(length);
+      key = fallbackCrypto.randomBytes(length);
     });
 
     it('should generate random bytes sucessfully', async () => {

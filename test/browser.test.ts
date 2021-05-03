@@ -1,6 +1,6 @@
 import { Crypto } from '@peculiar/webcrypto';
 
-import * as helpers from '../src/helpers';
+import * as browserCrypto from '../src/browser';
 
 declare global {
   interface Window {
@@ -18,7 +18,7 @@ describe('Browser', () => {
 
     beforeEach(async () => {
       length = 32;
-      key = helpers.browserRandomBytes(length);
+      key = browserCrypto.randomBytes(length);
     });
 
     it('should generate random bytes sucessfully', async () => {

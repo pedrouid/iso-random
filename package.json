@@ -17,9 +17,9 @@
   "main": "dist/cjs/node/index.js",
   "exports": {
     ".": {
-      "node": "./node/index.js",
-      "browser": "./browser/index.js",
-      "default": "./fallback/index.js"
+      "node": "./dist/cjs/node/index.js",
+      "browser": "./dist/cjs/browser/index.js",
+      "default": "./dist/cjs/fallback/index.js"
     }
   },
   "types": "dist/cjs/index.d.ts",

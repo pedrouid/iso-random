@@ -1,5 +1,5 @@
-import { fallbackRandomBytes } from '../shared';
+import _randomBytes from 'randombytes';
 
 export function randomBytes(length: number): Uint8Array {
-  return fallbackRandomBytes(length);
+  return _randomBytes(length);
 }

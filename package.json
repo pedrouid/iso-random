@@ -14,15 +14,14 @@
   "files": [
     "dist"
   ],
-  "main": "dist/cjs/node/index.js",
   "exports": {
     ".": {
+      "types": "./dist/cjs/node/index.d.ts",
       "node": "./dist/cjs/node/index.js",
       "browser": "./dist/esm/browser/index.js",
       "default": "./dist/cjs/fallback/index.js"
     }
   },
-  "types": "dist/cjs/index.d.ts",
   "unpkg": "dist/umd/index.min.js",
   "homepage": "https://github.com/pedrouid/iso-random",
   "repository": {

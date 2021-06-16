@@ -15,6 +15,7 @@
     "dist"
   ],
   "main": "dist/cjs/node/index.js",
+  "react-native": "dist/cjs/node/index.js",
   "module": "dist/esm/node/index.js",
   "browser": "dist/esm/browser/index.js",
   "types": "./dist/cjs/node/index.d.ts",
@@ -23,6 +24,7 @@
     ".": {
       "types": "./dist/cjs/node/index.d.ts",
       "node": "./dist/cjs/node/index.js",
+      "react-native": "./dist/cjs/node/index.js",
       "browser": "./dist/esm/browser/index.js",
       "default": "./dist/cjs/fallback/index.js"
     }
